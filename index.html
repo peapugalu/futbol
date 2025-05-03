@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main Menu -->
+    <div id="main-menu" class="screen">
+        <h1>Football Game</h1>
+        <div class="menu-option" id="start-game">Start Game</div>
+        <div class="menu-option" id="player-settings">Player Settings</div>
+        <div class="menu-option" id="how-to-play">How to Play</div>
+    </div>
+
+    <!-- Player Settings -->
+    <div id="player-settings-menu" class="screen hidden">
+        <h1>Player Settings</h1>
+        <div class="setting">
+            <label for="player-name">Your Name:</label>
+            <input type="text" id="player-name" placeholder="Player 1">
+        </div>
+        <div class="setting">
+            <label for="enemy-name">Opponent Name:</label>
+            <input type="text" id="enemy-name" placeholder="Computer">
+        </div>
+        <div class="menu-option" id="save-settings">Save Settings</div>
+        <div class="menu-option back-button">Back</div>
+    </div>
+
+    <!-- How to Play -->
+    <div id="how-to-play-menu" class="screen hidden">
+        <h1>How to Play</h1>
+        <div class="instructions">
+            <p>Use the joystick to move your player (blue team).</p>
+            <p>Score goals in the red net to earn points.</p>
+            <p>First to score 5 goals wins!</p>
+            <p>The computer will try to stop you and score in your blue net.</p>
+        </div>
+        <div class="menu-option back-button">Back</div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" class="screen hidden">
+        <div id="scoreboard">
+            <div id="player-score">0</div>
+            <div id="score-separator">-</div>
+            <div id="enemy-score">0</div>
+        </div>
+        <div id="game-field">
+            <div id="player-goal" class="goal left-goal"></div>
+            <div id="enemy-goal" class="goal right-goal"></div>
+            <div id="ball"></div>
+            <div id="player" class="player"></div>
+            <div id="enemy" class="enemy"></div>
+            <div id="center-circle"></div>
+        </div>
+        <div id="joystick-container">
+            <div id="joystick"></div>
+        </div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="game-over-screen" class="screen hidden">
+        <h1 id="game-over-title">Game Over</h1>
+        <div id="winner-message"></div>
+        <div id="final-score"></div>
+        <div class="menu-option" id="play-again">Play Again</div>
+        <div class="menu-option back-button">Main Menu</div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>

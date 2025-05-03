@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #2c3e50;
+    color: white;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.5s;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.menu-option {
+    background-color: #3498db;
+    padding: 1rem 2rem;
+    margin: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    min-width: 200px;
+    text-align: center;
+    transition: all 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu-option:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+.setting {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.setting label {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.setting input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.instructions {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
+    border-radius: 10px;
+    max-width: 80%;
+    margin-bottom: 2rem;
+    text-align: center;
+    line-height: 1.6;
+}
+
+#game-screen {
+    background-color: #27ae60;
+    position: relative;
+}
+
+#game-field {
+    width: 100%;
+    height: 80%;
+    position: relative;
+    overflow: hidden;
+    background-color: #2ecc71;
+    background-image: 
+        linear-gradient(white 2px, transparent 2px),
+        linear-gradient(90deg, white 2px, transparent 2px);
+    background-size: 50px 50px;
+    border-top: 5px solid white;
+    border-bottom: 5px solid white;
+}
+
+#center-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border: 2px solid white;
+    border-radius: 50%;
+}
+
+.goal {
+    position: absolute;
+    width: 20px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.7);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.left-goal {
+    left: 0;
+    border-left: 5px solid #3498db;
+}
+
+.right-goal {
+    right: 0;
+    border-right: 5px solid #e74c3c;
+}
+
+#ball {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.player, .enemy {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.player {
+    background-color: #3498db;
+    left: 20%;
+}
+
+.enemy {
+    background-color: #e74c3c;
+    right: 20%;
+}
+
+#scoreboard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem 2rem;
+    border-radius: 5px;
+}
+
+#player-score, #enemy-score {
+    min-width: 50px;
+    text-align: center;
+}
+
+#score-separator {
+    margin: 0 1rem;
+}
+
+#joystick-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#joystick {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    touch-action: none;
+}
+
+#game-over-title {
+    color: #f1c40f;
+}
+
+#winner-message {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#final-score {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .menu-option {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        min-width: 150px;
+    }
+}
